@@ -61,23 +61,7 @@ void writeStringToUart3(char* str)
 
 void Uart2InterruptIsr()//this interrupt routine is for receiving data from bluetooth
 {
-	//uncomment this block for  PC applications as we can use enter key for string terminatation.
-/*
- * rxChar[index] = UART2_DR_R;
-	index++;
-		if(rxChar[index-1]==13)
-	{
-		rxChar[index-1]='\0';
-		if(strcmp(rxChar,"red")==0)
-			redLED^=1;
-		if(strcmp(rxChar,"blue")==0)
-					blueLED^=1;
-		if(strcmp(rxChar,"green")==0)
-					greenLED^=1;
-		index=0;
-	}
-*/
-	//For mobile application example,comment this if you use the above block
+	
 	rxChar = UART2_DR_R;
 	if(rxChar=='f'||rxChar=='F'){
 	    redLED=1;
